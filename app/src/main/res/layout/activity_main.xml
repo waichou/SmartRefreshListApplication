@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.smartrefreshlistapplication.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/app_name" />
+
+
+    <!--
+        srlPrimaryColor	                    color	主题颜色
+        srlAccentColor	                    color	强调颜色
+        srlReboundDuration	                integer	释放后回弹动画时长
+        srlHeaderHeight	                    dimension	Header的标准高度
+        srlFooterHeight	                    dimension	Footer的标准高度
+        srlDragRate	                        float	显示拖动高度/真实拖动高度（默认0.5，阻尼效果）
+        srlHeaderMaxDragRate	            float	Header最大拖动高度/Header标准高度（默认2，要求>=1）
+        srlFooterMaxDragRate	            float	Footer最大拖动高度/Footer标准高度（默认2，要求>=1）
+        srlEnableRefresh	                boolean	是否开启下拉刷新功能（默认true）
+        srlEnableLoadmore	                boolean	是否开启加上拉加载功能（默认true）
+        srlEnableHeaderTranslationContent	boolean	拖动Header的时候是否同时拖动内容（默认true）
+        srlEnableFooterTranslationContent	boolean	拖动Footer的时候是否同时拖动内容（默认true）
+        srlEnablePreviewInEditMode	        boolean	是否在编辑模式时显示预览效果（默认true）
+        srlDisableContentWhenRefresh	    boolean	是否在刷新的时候禁止内容的一切手势操作（默认false）
+        srlDisableContentWhenLoading	    boolean	是否在加载的时候禁止内容的一切手势操作（默认false）
+    -->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ezy.ui.layout.LoadingLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                tools:listitem="@android:layout/simple_list_item_2" />
+
+        </ezy.ui.layout.LoadingLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
